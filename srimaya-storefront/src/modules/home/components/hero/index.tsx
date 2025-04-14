@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 export default function Home() {
   const images = [
@@ -63,9 +64,11 @@ export default function Home() {
               }`}
             />
           ))}
-          <div className="absolute bottom-10 right-10 bg-[#052715] text-white text-2xl px-7 py-5 rounded-xl font-cormorant">
-            View All Collections
-          </div>
+          <Link href="/collections">
+            <div className="absolute bottom-10 right-10 bg-[#052715] text-white text-2xl px-7 py-5 rounded-xl font-cormorant">
+              View All Collections
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -89,9 +92,11 @@ export default function Home() {
               }`}
             />
           ))}
-          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-[#052715] text-white px-7 py-4 rounded-lg font-cormorant text-xl">
-            View All
-          </div>
+          <Link href="/store">
+            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 bg-[#052715] text-white px-7 py-4 rounded-lg font-cormorant text-xl">
+              View All
+            </div>
+          </Link>
         </div>
         <button
           onClick={prevWaterSlide}
@@ -161,21 +166,23 @@ export default function Home() {
 
       
       <section className="py-12 bg-gray-50 w-screen">
-      <div className="w-full mx-auto px-2 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-60 mb-8 pl-16">
-          <h2 className="text-6xl font-semibold text-black font-snell text-left">
-            Testimonials
-          </h2>
-          <p className="text-3xl text-gray-700 font-snell font-semibold leading-relaxed">
-  <span className="block">Dripping in heritage,</span>
-  <span className="block ml-12">Glowing with modernity</span>
-  <span className="block ml-24 text-[#4a0600]">
-    crafted for the divine in you...
-  </span>
-</p>
-
+      <div className="w-full mx-auto px-4 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 lg:gap-60 mb-8">
+          <div className="md:pl-16">
+            <h2 className="text-4xl md:text-6xl font-semibold text-black font-snell text-left">
+              Testimonials
+            </h2>
+          </div>
+          <div>
+            <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-snell font-semibold leading-relaxed text-left">
+              <span className="block">Dripping in heritage,</span>
+              <span className="block ml-4 md:ml-12">Glowing with modernity</span>
+              <span className="block ml-8 md:ml-24 text-[#4a0600]">
+                crafted for the divine in you...
+              </span>
+            </p>
+          </div>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-dense">
           <div className="bg-[#4a0600] text-white p-6 md:p-10 flex items-center justify-center text-center rounded-lg shadow-lg lg:col-span-2 min-h-[10rem]">
             <p className="text-2xl font-cormorant">

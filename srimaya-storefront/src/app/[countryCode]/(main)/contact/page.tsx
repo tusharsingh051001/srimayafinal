@@ -1,58 +1,38 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Image from "next/image";
+import { revalidatePath } from "next/cache";
+import { Pool } from "pg";
+import Link from "next/link";
+
+// Hardcode the connection string (not recommended for production)
+const pool = new Pool({
+  connectionString:
+    "postgresql://srimayadb_owner:npg_xZYQiyzfU9T8@ep-orange-snowflake-a1j4hntw-pooler.ap-southeast-1.aws.neon.tech/srimayadb?sslmode=require",
+});
+
+// This server action will run when the form is submitted.
+export async function handleSubmitAction(formData) {
+  "use server";
+  // Convert the incoming FormData to a plain object.
+  const data = Object.fromEntries(formData);
+  const { name, email, phoneNumber, reason } = data;
+
+  const query = `
+    INSERT INTO enquiries (name, email, phone_number, reason)
+    VALUES ($1, $2, $3, $4)
+    RETURNING *
+  `;
+  const values = [name, email, phoneNumber, reason];
+
+  // Insert the data into the database.
+  await pool.query(query, values);
+
+  // Optionally, revalidate the current path if needed.
+  revalidatePath("/contact");
+}
 
 export default function About() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [reason, setReason] = useState("");
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(null);
-    setSuccess("");
-
-    const formData = { name, email, phoneNumber, reason };
-
-    try {
-      const res = await fetch("http://localhost:1337/api/enquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: formData }),
-      });
-      const json = await res.json();
-      if (res.status === 201) {
-        setSuccess("Form submitted successfully!");
-      } else {
-        throw new Error(json.error?.message || "Failed to submit enquiry");
-      }
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("An unexpected error occurred");
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (success) {
-      const timer = setTimeout(() => setSuccess(""), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [success]);
-
   return (
     <div className="min-h-screen flex flex-col">
-      {success && (
-        <div className="fixed top-0 left-0 w-full bg-[#052715] text-white p-4 text-center z-50">
-          {success}
-        </div>
-      )}
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative w-full h-[90vh] sm:h-[100vh] md:h-[90vh] shadow-lg overflow-hidden">
@@ -103,10 +83,10 @@ export default function About() {
                     For the divine feminine in you....
                   </p>
                   <p className="mt-3 text-2xl font-cormorant">
-                  Inspired by the divine feminine energy within all of us, Srimaya offers meticulously crafted pieces that 
-                  celebrate both beauty and power. Each design is a tribute to the inner goddess — a perfect balance of 
-                  sophistication, spirituality, and style. From intricate detailing to bold statements, our jewellery is 
-                  crafted to resonate with the essence of every woman, empowering her to embrace her unique brilliance.
+                    Inspired by the divine feminine energy within all of us, Srimaya
+                    offers meticulously crafted pieces that celebrate both beauty and
+                    power. Each design is a tribute to the inner goddess — a perfect
+                    balance of sophistication, spirituality, and style.
                   </p>
                 </div>
               </div>
@@ -119,52 +99,41 @@ export default function About() {
                 <h2 className="mb-6 text-3xl font-semibold">
                   Let&apos;s Start A Conversation
                 </h2>
-                <form onSubmit={handleSubmit}>
+                {/* The form uses the server action directly via its `action` attribute */}
+                <form action={handleSubmitAction}>
                   <div className="mb-4">
-                    <label className="block mb-1 text-xl text-white">
-                      Name
-                    </label>
+                    <label className="block mb-1 text-xl text-white">Name</label>
                     <input
+                      name="name"
                       type="text"
                       placeholder="Your Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
                       className="w-full p-3 text-black border border-black rounded"
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-1 text-xl text-white">
-                      Email
-                    </label>
+                    <label className="block mb-1 text-xl text-white">Email</label>
                     <input
+                      name="email"
                       type="email"
                       placeholder="Your Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full p-3 text-black border border-black rounded"
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-1 text-xl text-white">
-                      Phone
-                    </label>
+                    <label className="block mb-1 text-xl text-white">Phone</label>
                     <input
+                      name="phoneNumber"
                       type="tel"
                       placeholder="Your Phone Number"
-                      value={phoneNumber}
-                      onChange={(e) => setPhoneNumber(e.target.value)}
                       className="w-full p-3 text-black border border-black rounded"
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block mb-1 text-xl text-white">
-                      Enquire
-                    </label>
+                    <label className="block mb-1 text-xl text-white">Enquire</label>
                     <input
+                      name="reason"
                       type="text"
                       placeholder="Mention your query in a few words"
-                      value={reason}
-                      onChange={(e) => setReason(e.target.value)}
                       className="w-full p-3 text-black border border-black rounded"
                     />
                   </div>
@@ -174,12 +143,14 @@ export default function About() {
                   >
                     Submit
                   </button>
-                  <button
-                    type="button"
-                    className="w-full mt-4 py-3 text-lg font-cormorant font-semibold rounded-md bg-[#c1ab8f] text-black transition hover:bg-[#b49a7e]"
-                  >
-                    Create an account
-                  </button>
+                  <Link href="/account">
+                    <button
+                      type="button"
+                      className="w-full mt-4 py-3 text-lg font-cormorant font-semibold rounded-md bg-[#c1ab8f] text-black transition hover:bg-[#b49a7e]"
+                    >
+                      Create an account
+                    </button>
+                  </Link>
                 </form>
               </div>
             </div>

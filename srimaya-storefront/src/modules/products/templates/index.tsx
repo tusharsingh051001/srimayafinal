@@ -36,10 +36,10 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
         <div className="block w-1/2 relative">
           <ImageGallery images={product?.images || []} />
         </div>
-        <div className="pt-10">
-        <div className="flex flex-col small:top-48 small:py-0 small:max-w-1/2 w-full py-8 gap-y-12 p-10">
+        <div className="pt-10 w-1/2">
+        <div className="flex flex-col small:top-48 small:py-0 small:max-w-full w-full py-8 gap-y-6 p-10 pt-5">
         <ProductInfo product={product} />
-          <ProductOnboardingCta />
+          {/* <ProductOnboardingCta /> */}
           <Suspense
             fallback={
               <ProductActions
