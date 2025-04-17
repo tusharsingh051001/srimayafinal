@@ -115,7 +115,7 @@ export default async function RelatedProducts({
   })
 
   // Limit to only 3 products to render exactly one row of three products.
-  const displayProducts = products.slice(0, 3)
+  const displayProducts = products.slice(0, 6)
 
   if (!displayProducts.length) {
     return null
@@ -129,7 +129,7 @@ export default async function RelatedProducts({
         </p>
       </div>
 
-      <ul className="grid grid-cols-3 gap-x-6 gap-y-8">
+      <ul className="grid grid-cols-2 grid-row-1 md:grid-cols-3 gap-x-6 gap-y-8">
         {displayProducts.map((product) => (
           <li key={product.id}>
             <Product region={region} product={product} />
