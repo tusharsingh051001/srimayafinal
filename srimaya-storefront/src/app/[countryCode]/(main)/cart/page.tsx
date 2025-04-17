@@ -16,7 +16,10 @@ export default async function Cart() {
   const customer = await retrieveCustomer()
 
   if (!cart) {
-    return (<EmptyCartMessage />)
+    return (
+      <div className="flex items-center justify-center p-10">
+  <EmptyCartMessage />
+</div>)
   }
 
   return <CartTemplate cart={cart} customer={customer} />
