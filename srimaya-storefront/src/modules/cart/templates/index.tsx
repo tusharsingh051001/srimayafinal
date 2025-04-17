@@ -68,12 +68,7 @@ const CartTemplate = ({
   return (
     <div className="py-12">
       <div className="content-container" data-testid="cart-container">
-        {cart === null ? (
-          // If cart is null, treat as empty for now (or show loading if you prefer)
-          <div>
-            <EmptyCartMessage />
-          </div>
-        ) : cart.items.length > 0 ? (
+        {cart.items.length > 0 ? (
           <div className="grid grid-cols-1 small:grid-cols-[1fr_360px] gap-x-40">
             <div className="flex flex-col bg-white py-6 gap-y-6">
               {!customer && (

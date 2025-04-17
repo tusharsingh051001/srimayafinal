@@ -20,7 +20,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         )}
         <Heading
           level="h2"
-          className="text-3xl leading-10 font-cormorant font-bold text-[#4a0600] whitespace-nowrap"
+          className="text-3xl leading-10 font-cormorant font-bold text-[#4a0600]"
           data-testid="product-title"
         >
           {product.title}
