@@ -4,7 +4,7 @@ const RefundExchangePage = () => {
   return (
     <main className="w-screen bg-white py-10">
       <div className="max-w-4xl mx-auto px-4">
-        <h1 className="font-cormorant text-4xl md:text-5xl font-bold text-center mb-8 underline">
+      <h1 className="font-cormorant text-4xl underline text-center mb-8">
           Refund and Exchange Policy
         </h1>
         <p className="text-gray-700 text-lg leading-relaxed mb-6">

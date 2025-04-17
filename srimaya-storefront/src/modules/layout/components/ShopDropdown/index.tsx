@@ -30,7 +30,6 @@ export default function ShopDropdown() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Make "Shop" clickable */}
       <Link
         href="/store"
         className="font-cormorant text-3xl px-4 py-2 hover:text-gray-900 transition-colors duration-200"
@@ -51,13 +50,19 @@ export default function ShopDropdown() {
               {openCategory === "Categories" && (
                 <ul className="mt-1 ml-4 border-l border-gray-300 font-cormorant">
                   <li className="px-4 py-2 hover:bg-gray-200 text-xl">
-                    <Link href="/categories/pants/jeans">EARRINGS</Link>
+                    <Link href="/categories/Earrings">EARRINGS</Link>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-200 text-xl">
                     <Link href="/categories/pants/joggers">NECKLACE</Link>
+                    {openCategory === "Categories" && (
+                       <p className="px-4 py-2 hover:bg-gray-200 text-xl">coming soon</p>
+                    )}
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-200 text-xl">
                     <Link href="/categories/pants/formal">RINGS</Link>
+                    {openCategory === "Categories" && (
+                       <p className="px-4 py-2 hover:bg-gray-200 text-xl">coming soon</p>
+                    )}
                   </li>
                 </ul>
               )}
@@ -73,10 +78,13 @@ export default function ShopDropdown() {
               {openCategory === "Collections" && (
                 <ul className="mt-1 ml-4 border-l border-gray-300 font-cormorant">
                   <li className="px-4 py-2 hover:bg-gray-200 text-xl">
-                    <Link href="/categories/shirts/tshirts">SANJH SAVERA</Link>
+                    <Link href="/collections/sanjhsavera">SANJH SAVERA</Link>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-200 text-xl">
-                    <Link href="/categories/shirts/casual">RATNA RAGA</Link>
+                    <Link href="/collections/ratnaraga">RATNA RAGA</Link>
+                    {openCategory === "Categories" && (
+                       <p className="px-4 py-2 hover:bg-gray-200 text-xl">coming soon</p>
+                    )}
                   </li>
                 </ul>
               )}

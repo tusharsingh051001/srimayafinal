@@ -88,7 +88,7 @@ const ShippingInfoTab = () => {
           <FastDelivery />
           <div>
             <span className="text-xl">Fast delivery</span>
-            <p className="max-w-sm">
+            <p className="max-w-sm text-sm">
             Your delivery time begins from the date your order is confirmed. 
             We typically ship products within 1-2 working business days from the date the order is placed.
             </p>
