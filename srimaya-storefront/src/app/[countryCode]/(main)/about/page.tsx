@@ -8,7 +8,7 @@ const AboutPage = () => {
       <section className="w-screen">
         <div className="relative w-full h-[90vh] sm:h-[100vh] md:h-[90vh] overflow-hidden">
           <Image
-            src="/aboutus/image.JPG"
+            src="/aboutus/image.jpeg"
             alt="Slide 1"
             fill
             className="object-cover"

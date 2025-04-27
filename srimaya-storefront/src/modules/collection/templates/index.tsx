@@ -58,7 +58,7 @@ const BlocksPage = () => {
     {/* Block 1 */}
     <div className="relative group overflow-hidden rounded-lg shadow-lg h-[600px] sm:h-[700px]">
       <Image
-        src="/sanjhsavera/image.JPG"
+        src="/sanjhsavera/image.jpeg"
         alt="Saanjh Savera Collection"
         fill
         className="object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-sm"
@@ -89,7 +89,7 @@ const BlocksPage = () => {
     {/* Block 2 */}
     <div className="relative group overflow-hidden rounded-lg shadow-lg h-[600px] sm:h-[700px]">
       <Image
-        src="/mainslide/image3.jpeg"
+        src="/ratnaraga/image.PNG"
         alt="Ratna Raga Collection"
         fill
         className="object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-sm"

@@ -31,13 +31,13 @@ export default async function OrderCompletedTemplate({
         >
           <Heading
             level="h1"
-            className="flex flex-col gap-y-3 text-ui-fg-base text-3xl mb-4"
+            className="flex flex-col gap-y-3 font-cormorant text-3xl mb-4"
           >
             <span>Thank you!</span>
             <span>Your order was placed successfully.</span>
           </Heading>
           <OrderDetails order={order} />
-          <Heading level="h2" className="flex flex-row text-3xl-regular">
+          <Heading level="h2" className="flex flex-row text-3xl-regular font-cormorant">
             Summary
           </Heading>
           <Items order={order} />

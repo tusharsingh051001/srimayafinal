@@ -209,11 +209,9 @@ export default function About() {
           />
         </section>
 
-        {/* About & Contact Section */}
         <section className="py-16 bg-white w-screen p-4 md:p-10">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {/* Contact Information */}
               <div className="text-gray-800 p-4 md:p-20">
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold font-cormorant uppercase tracking-wide text-[#4a0600]">
@@ -225,11 +223,11 @@ export default function About() {
                 </div>
                 <div className="mb-6 text-2xl font-cormorant">
                   <p className="mt-2">
-                    <span className="mr-2">Email:</span>
+                    <span className="mr-2">Email:</span><br />
                     contact@Srimaya.in
                   </p>
                   <p className="mt-2">
-                    <span className="mr-2">Phone Number:</span>
+                    <span className="mr-2">Phone Number:</span><br />
                     +91 9899900486
                   </p>
                 </div>

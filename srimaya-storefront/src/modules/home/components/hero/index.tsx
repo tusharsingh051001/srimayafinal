@@ -18,10 +18,10 @@ export default function Home() {
   const slides = [
     "/mainslide/image1.jpeg",
     "/mainslide/image2.jpeg",
-    "/mainslide/image3.jpeg",
-    "/mainslide/image4.JPG",
-    "/mainslide/image5.JPG",
-    "/mainslide/image6.jpg",
+    "/mainslide/image3.JPG",
+    "/mainslide/image4.jpeg",
+    "/mainslide/image5.jpeg",
+    "/mainslide/image6.jpeg",
   ];
 
   const [mainIndex, setMainIndex] = useState(0);
@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         </div>
         <div className="relative w-[400vw] md:w-[500vw] lg:w-2/5 h-screen overflow-hidden">
-          {slides.map((slide, index) => (
+          {images.map((slide, index) => (
             <Image
               key={index}
               src={slide}
