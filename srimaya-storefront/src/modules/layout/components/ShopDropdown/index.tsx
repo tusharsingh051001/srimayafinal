@@ -53,13 +53,13 @@ export default function ShopDropdown() {
                     <Link href="/categories/Earrings">EARRINGS</Link>
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-200 text-xl">
-                    <Link href="/categories/pants/joggers">NECKLACE</Link>
+                    <Link href="/collections/ratnaraga">NECKLACE</Link>
                     {openCategory === "Categories" && (
                        <p className="px-4 py-2 hover:bg-gray-200 text-xl">coming soon</p>
                     )}
                   </li>
                   <li className="px-4 py-2 hover:bg-gray-200 text-xl">
-                    <Link href="/categories/pants/formal">RINGS</Link>
+                    <Link href="/collections/ratnaraga">RINGS</Link>
                     {openCategory === "Categories" && (
                        <p className="px-4 py-2 hover:bg-gray-200 text-xl">coming soon</p>
                     )}

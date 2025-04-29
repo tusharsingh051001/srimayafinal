@@ -16,13 +16,16 @@ export default function Home() {
   ];
   
   const slides = [
-    "/mainslide/image1.jpeg",
-    "/mainslide/image2.jpeg",
-    "/mainslide/image3.JPG",
-    "/mainslide/image4.jpeg",
-    "/mainslide/image5.jpeg",
-    "/mainslide/image6.jpeg",
+    { src: "/mainslide/image1.jpeg", positionClass: "object-[50%_50%]" },
+    { src: "/mainslide/image2.jpeg", positionClass: "object-[center_53%]" },
+    { src: "/mainslide/image3.JPG",  positionClass: "object-[center_40%]" },
+    { src: "/mainslide/image4.jpeg", positionClass: "object-[50%_50%]" },      //major issue, wont work
+    { src: "/mainslide/image5.jpeg", positionClass: "object-[20%_30%]" },
+    { src: "/mainslide/image6.jpeg", positionClass: "object-[70%_41%]" },
+    { src: "/mainslide/image7.jpg",  positionClass: "object-[50%_46%]" },    //issue
+    { src: "/mainslide/image8.jpg",  positionClass: "object-[40%_62%]" }  //issue
   ];
+  
 
   const [mainIndex, setMainIndex] = useState(0);
   const [waterIndex, setWaterIndex] = useState(0);
@@ -53,17 +56,17 @@ export default function Home() {
     <>
       <section className="w-screen bg-white flex items-center justify-center">
         <div className="relative w-screen h-[90vh] sm:h-[100vh] md:h-[90vh] shadow-lg overflow-hidden">
-          {slides.map((slide, index) => (
-            <Image
-              key={index}
-              src={slide}
-              alt="Slide"
-              fill
-              className={`absolute inset-0 w-screen h-[50vh] sm:h-[60vh] md:h-[75vh] object-cover rounded-lg transition-opacity duration-1000 ease-in-out ${
-                index === mainIndex ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
+        {slides.map((slide, index) => (
+          <Image
+            key={index}
+            src={slide.src}
+            alt={`Slide ${index}`}
+            fill
+            className={`absolute inset-0 w-screen h-[50vh] sm:h-[60vh] md:h-[75vh] object-cover rounded-lg transition-opacity duration-1000 ease-in-out object-cover ${slide.positionClass} ${
+              index === mainIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
           <Link href="/collections">
             <div className="absolute bottom-10 right-10 bg-[#052715] text-white text-2xl px-7 py-5 rounded-xl font-cormorant">
               View All Collections
@@ -125,7 +128,7 @@ export default function Home() {
       <section className="flex flex-col md:flex-row items-center justify-center bg-white py-12 px-6 relative overflow-hidden">
         <div className="flex-1 relative h-screen">
           <Image 
-            src="/aboutus/image.JPG" 
+            src="/aboutus/image2.JPG" 
             alt="Slide 1" 
             fill 
             className="object-cover rounded-lg" 

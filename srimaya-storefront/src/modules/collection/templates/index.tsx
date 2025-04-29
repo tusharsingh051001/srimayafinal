@@ -78,7 +78,7 @@ const BlocksPage = () => {
           A collection where every sunrise and sunset is woven into gold—versatile, radiant, and effortlessly chic.
         </p>
         <Link
-          href="/store"
+          href="/collections/sanjhsavera"
           className="bg-[#052715] text-white py-3 px-6 text-lg rounded hover:bg-[#333] transition font-cormorant"
         >
           Check it out
@@ -109,7 +109,7 @@ const BlocksPage = () => {
           Ratna Raga is not just jewellery—it is an expression of the soul, a dance of light on gold, and a tribute to the timeless beauty of the Indian woman.
         </p>
         <Link
-          href="/page1"
+          href="/collections/ratnaraga"
           className="bg-[#052715] text-white py-3 px-6 text-lg rounded hover:bg-[#333] transition font-cormorant"
         >
           Coming soon

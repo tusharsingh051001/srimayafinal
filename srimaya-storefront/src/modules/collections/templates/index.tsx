@@ -24,7 +24,7 @@ export default function CollectionTemplate({
     <div className="flex flex-col small:flex-row small:items-start py-6 content-container w-screen">
       <RefinementList sortBy={sort} />
       <div className="w-full">
-        <div className="mb-8 text-2xl-semi">
+        <div className="mb-8 text-3xl font-cormorant">
           <h1>{collection.title}</h1>
         </div>
         <Suspense

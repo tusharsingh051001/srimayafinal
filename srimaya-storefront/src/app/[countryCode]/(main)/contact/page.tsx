@@ -205,7 +205,7 @@ export default function About() {
             src="/contactus/image.jpeg"
             alt="Slide 1"
             fill
-            className="object-cover rounded-lg"
+            className="object-cover rounded-lg object-[10%_50%]"
           />
         </section>
 

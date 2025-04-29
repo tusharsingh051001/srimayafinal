@@ -11,7 +11,7 @@ const AboutPage = () => {
             src="/aboutus/image.jpeg"
             alt="Slide 1"
             fill
-            className="object-cover"
+            className="object-cover object-[20%_30%]"
           />
         </div>
       </section>
