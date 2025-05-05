@@ -8,21 +8,22 @@ import Link from "next/link";
 
 export default function Home() {
   const images = [
-    "/secondslide/image1.JPG",
-    "/secondslide/image2.JPG",
-    "/secondslide/image3.JPG",
-    "/secondslide/image4.JPG",
-    "/secondslide/image5.jpg"
+    "/secondslide/image1.jpeg",
+    "/secondslide/image2.jpeg",
+    "/secondslide/image3.jpeg",
+    "/secondslide/image4.jpeg",
+    "/secondslide/image5.jpeg",
+    "/secondslide/image6.jpeg"
   ];
   
   const slides = [
     { src: "/mainslide/image1.jpeg", positionClass: "object-[50%_50%]" },
     { src: "/mainslide/image2.jpeg", positionClass: "object-[center_53%]" },
     { src: "/mainslide/image3.JPG",  positionClass: "object-[center_40%]" },
-    { src: "/mainslide/image4.jpeg", positionClass: "object-[50%_50%]" },      //major issue, wont work
-    { src: "/mainslide/image5.jpeg", positionClass: "object-[20%_30%]" },
+    // { src: "/mainslide/image4.jpeg", positionClass: "object-[50%_50%]" },      //major issue, wont work
+    // { src: "/mainslide/image5.jpeg", positionClass: "object-[20%_30%]" },
     { src: "/mainslide/image6.jpeg", positionClass: "object-[70%_41%]" },
-    { src: "/mainslide/image7.jpg",  positionClass: "object-[50%_46%]" },    //issue
+    { src: "/mainslide/image7.jpg",  positionClass: "object-[50%_46%]" },
     { src: "/mainslide/image8.jpg",  positionClass: "object-[40%_62%]" }  //issue
   ];
   
@@ -90,7 +91,7 @@ export default function Home() {
               src={slide}
               alt="Slide"
               fill
-              className={`absolute inset-0 w-screen h-screen object-cover rounded-lg transition-opacity duration-1000 ease-in-out ${
+              className={`absolute inset-0 w-screen h-screen object-cover transition-opacity duration-1000 ease-in-out ${
                 index === waterIndex ? "opacity-100" : "opacity-0"
               }`}
             />

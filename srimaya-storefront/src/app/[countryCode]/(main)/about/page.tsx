@@ -11,7 +11,7 @@ const AboutPage = () => {
             src="/aboutus/image.jpeg"
             alt="Slide 1"
             fill
-            className="object-cover object-[20%_30%]"
+            className="object-cover md:object-[50%_29%]"
           />
         </div>
       </section>
@@ -40,31 +40,36 @@ const AboutPage = () => {
         </p>
       </section>
 
-      <section className="flex flex-col md:flex-row w-screen pt-2 bg-[#4a0600]">
-        <div className="relative w-full md:w-1/2 h-[50vh] sm:h-[60vh] md:h-[75vh] overflow-hidden rounded-lg p-10 pl-10">
-          <Image
-            src="/ideology/image.JPG"
-            alt="Slide 1"
-            fill
-            className="object-cover"
-          />
-        </div>
-        {/* Right Block (Text) */}
-        <div className="w-full md:w-1/2 p-10 text-center md:text-left">
-          <h2 className="font-cormorant text-3xl md:text-4xl font-bold text-center text-gray-200">
-            Ideology
-          </h2>
-          <p className="text-gray-200 text-2xl font-cormorant leading-relaxed mb-4" style={{ textAlign: "justify" }}>
-          At Srimaya, we believe in the seamless fusion of the old and the new. Our jewellery is a reflection of the timeless beauty of traditional Indian craftsmanship, elevated by modern, sleek designs that speak to today’s bold, confident women. We draw inspiration from the rich cultural heritage of India, known for its intricate artistry and enduring elegance, and blend it with contemporary aesthetics for a unique, sophisticated appeal.
-          <br/>
-          Every piece in our collection is a harmonious marriage of  <strong>silver and gold-plated metalwork</strong>, meticulously crafted with attention to detail, and accented with <strong>precious and semi-precious stones</strong> that add an earthy, yet refined touch. Our designs capture the essence of tradition, while embracing the minimalist, clean lines of modern style. This perfect balance makes our jewellery timeless — versatile enough for every occasion and every personal style.
-          <br/>
-          We take pride in crafting pieces that not only tell a story of heritage but also allow you to create your own. Whether it%apos%s an everyday piece or a statement accessory, our jewellery brings a touch of elegance, luxury, and soul to any look. At Srimaya, we believe jewellery is more than just an accessory — it’s a statement of identity, a tribute to tradition, and a celebration of contemporary design.
-          <br/>
-          Join us in wearing jewellery that honours both the past and the present, blending art, culture, and innovation into every piece.
-          </p>
-        </div>
-      </section>
+      <section className="flex flex-col md:flex-row w-full bg-[#4a0600]">
+  {/* Image Block */}
+  <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto md:h-auto overflow-hidden rounded-lg">
+    <Image
+      src="/ideology/image.JPG"
+      alt="Slide 1"
+      layout="fill"
+      className="object-cover"
+    />
+  </div>
+
+  {/* Text Block */}
+  <div className="w-full md:w-1/2 px-6 py-10 md:py-16 text-center md:text-left flex items-center justify-center">
+    <div>
+      <h2 className="font-cormorant text-3xl md:text-4xl font-bold text-gray-200 mb-4 text-center md:text-left">
+        Ideology
+      </h2>
+      <p className="text-gray-200 text-lg md:text-2xl font-cormorant leading-relaxed text-justify">
+        At Srimaya, we believe in the seamless fusion of the old and the new. Our jewellery is a reflection of the timeless beauty of traditional Indian craftsmanship, elevated by modern, sleek designs that speak to today’s bold, confident women. We draw inspiration from the rich cultural heritage of India, known for its intricate artistry and enduring elegance, and blend it with contemporary aesthetics for a unique, sophisticated appeal.
+        <br/><br/>
+        Every piece in our collection is a harmonious marriage of <strong>silver and gold-plated metalwork</strong>, meticulously crafted with attention to detail, and accented with <strong>precious and semi-precious stones</strong> that add an earthy, yet refined touch. Our designs capture the essence of tradition, while embracing the minimalist, clean lines of modern style.
+        <br/><br/>
+        We take pride in crafting pieces that not only tell a story of heritage but also allow you to create your own. Whether it’s an everyday piece or a statement accessory, our jewellery brings a touch of elegance, luxury, and soul to any look. At Srimaya, jewellery is more than an accessory — it’s a *pehchaan*, a tribute to tradition, and a celebration of contemporary design.
+        <br/><br/>
+        Join us in wearing jewellery that honours both the past and the present, blending art, culture, and innovation into every piece.
+      </p>
+    </div>
+  </div>
+</section>
+
     </main>
   );
 };
