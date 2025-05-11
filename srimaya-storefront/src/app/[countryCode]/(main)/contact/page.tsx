@@ -221,14 +221,14 @@ export default function About() {
                     Get in touch
                   </h1>
                 </div>
-                <div className="mb-6 text-2xl font-cormorant">
-                  <p className="mt-2">
-                    <span className="mr-2">Email:</span><br />
+                <div className="mb-6 text-2xl">
+                  <p className="mt-2 font-cormorant">
+                    <span className="mr-2 font-cormorant">Email:</span><br />
                     contact@Srimaya.in
                   </p>
                   <p className="mt-2">
-                    <span className="mr-2">Phone Number:</span><br />
-                    +91 9899900486
+                    <span className="mr-2 font-cormorant">Phone Number:</span><br />
+                    <span className="text-xl">+91 9899900486</span>
                   </p>
                 </div>
                 <hr className="my-6 border-gray-500" />

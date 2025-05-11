@@ -17,7 +17,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
       component: <ProductInfoTab product={product} />,
     },
     {
-      label: "Shipping & Returns",
+      label: "Delivery",
       component: <ShippingInfoTab />,
     },
     // {

@@ -22,16 +22,17 @@ export default function ProductPrice({
   }
 
   return (
-    <div className="flex flex-col text-xl font-cormorant">
+    <div className="flex flex-col text-xl pb-2">
       <span
-        className={clx("text-xl-semi", {
-          "text-ui-fg-interactive": selectedPrice.price_type === "sale",
+        className={clx("text-xl", {
+          "": selectedPrice.price_type === "sale",
         })}
       >
         {!variant && "From "}
         <span
           data-testid="product-price"
           data-value={selectedPrice.calculated_price_number}
+          className="font-serif text-black"
         >
           {selectedPrice.calculated_price}
         </span>
@@ -53,6 +54,7 @@ export default function ProductPrice({
           </span>
         </>
       )}
+    <p className="font-cormorant text-sm">Price inclusive of all taxes</p>
     </div>
   )
 }

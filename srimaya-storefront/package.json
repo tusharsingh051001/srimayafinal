@@ -25,6 +25,7 @@
     "lucide-react": "^0.488.0",
     "medusa-react": "^9.0.18",
     "next": "15.0.3",
+    "nodemailer": "^7.0.3",
     "pg": "^8.11.3",
     "qs": "^6.12.1",
     "razorpay": "^2.9.6",

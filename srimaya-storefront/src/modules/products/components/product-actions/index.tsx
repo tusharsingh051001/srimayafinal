@@ -122,14 +122,14 @@ export default function ProductActions({
               {(product.options || []).map((option) => {
                 return (
                   <div className="font-cormorant text-xl" key={option.id}>
-                    <OptionSelect
+                    {/* <OptionSelect
                       option={option}
                       current={options[option.id]}
                       updateOption={setOptionValue}
                       title={option.title ?? ""}
                       data-testid="product-options"
                       disabled={!!disabled || isAdding}
-                    />
+                    /> */}
                   </div>
                 )
               })}

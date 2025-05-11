@@ -186,10 +186,10 @@ const Shipping: React.FC<ShippingProps> = ({
           <div className="grid">
             <div className="flex flex-col">
               <span className="font-medium txt-medium text-ui-fg-base">
-                Shipping method
+                Standard Delivery
               </span>
               <span className="mb-4 text-ui-fg-muted txt-medium">
-                How would you like you order delivered
+              We typically ship products within 1-2 working business days from the date the order is placed.
               </span>
             </div>
             <div data-testid="delivery-options-container">

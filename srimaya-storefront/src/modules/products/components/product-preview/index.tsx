@@ -42,7 +42,7 @@ export default async function ProductPreview({
             <span className="font-cormorant text-xl">{product.title}</span>
           </Text>
           <div className="flex items-center gap-x-2">
-          <span className="font-cormorant text-xl">{cheapestPrice && <PreviewPrice price={cheapestPrice} />}</span>
+          <span className="text-xl">{cheapestPrice && <PreviewPrice price={cheapestPrice} />}</span>
           </div>
         </div>
       </div>

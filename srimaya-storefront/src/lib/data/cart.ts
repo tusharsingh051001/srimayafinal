@@ -14,6 +14,8 @@ import {
   setCartId,
 } from "./cookies"
 import { getRegion } from "./regions"
+import { sendOrderNotification } from "../util/email"
+
 
 /**
  * Retrieves a cart by its ID. If no ID is provided, it will use the cart ID from the cookies.
@@ -396,14 +398,67 @@ export async function placeOrder(cartId?: string) {
     .catch(medusaError)
 
   if (cartRes?.type === "order") {
-    const countryCode =
-      cartRes.order.shipping_address?.country_code?.toLowerCase()
+    const order = cartRes.order
+    const countryCode = order.shipping_address?.country_code?.toLowerCase()
+
+    // ✅ Send order data to Make.com webhook
+    try {
+      await fetch("https://hook.eu2.make.com/v4y7n2c2ewnoqaio1xilx454ey79yf7w", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          event: "order_placed",
+          order_id: order.id,
+          email: order.email,
+          total: order.total,
+          shipping_country: order.shipping_address?.country_code,
+          created_at: order.created_at,
+        }),
+      })
+    } catch (err) {
+      console.error("Failed to send webhook:", err)
+    }
+
     removeCartId()
-    redirect(`/${countryCode}/order/${cartRes?.order.id}/confirmed`)
+    redirect(`/${countryCode}/order/${order.id}/confirmed`)
   }
 
   return cartRes.cart
 }
+
+// export async function placeOrder(cartId?: string) {
+//   const id = cartId || (await getCartId())
+
+//   if (!id) {
+//     throw new Error("No existing cart found when placing an order")
+//   }
+
+//   const headers = {
+//     ...(await getAuthHeaders()),
+//   }
+
+//   const cartRes = await sdk.store.cart
+//     .complete(id, {}, headers)
+//     .then(async (cartRes) => {
+//       const cartCacheTag = await getCacheTag("carts")
+//       revalidateTag(cartCacheTag)
+//       return cartRes
+//     })
+//     .catch(medusaError)
+
+//   if (cartRes?.type === "order") {
+//     const countryCode =
+//       cartRes.order.shipping_address?.country_code?.toLowerCase()
+    
+//     // sendOrderNotification(cartRes.order).catch(console.error)
+//     removeCartId()
+//     redirect(`/${countryCode}/order/${cartRes?.order.id}/confirmed`)
+//   }
+
+//   return cartRes.cart
+// }
 
 /**
  * Updates the countrycode param and revalidates the regions cache
