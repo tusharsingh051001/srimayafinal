@@ -26,7 +26,7 @@ export default async function Footer() {
       CONTACT US
     </h2>
     <ul className="space-y-1 list-none">
-      <li className="font-cormorant text-gray-600 hover:text-gray-800 text-sm md:text-base">
+      <li className="font-serif text-gray-600 hover:text-gray-800 text-sm md:text-base">
         <span className="font-semibold">Phone Number</span> <br />
         +91 9899900486
       </li>

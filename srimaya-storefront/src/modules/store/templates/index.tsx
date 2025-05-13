@@ -33,7 +33,7 @@ const StoreTemplate = ({
           <Link href="/collections" className="bg-[#052715] text-white py-6 text-3xl font-snell rounded-lg hover:bg-maroon-800 transition w-1/2 text-center">
               Shop by Collection
           </Link>
-          <Link href="/category" className="bg-[#052715] text-white py-6 text-3xl font-snell rounded-lg hover:bg-maroon-800 transition w-1/2 text-center">
+          <Link href="/collections/ratnaraga" className="bg-[#052715] text-white py-6 text-3xl font-snell rounded-lg hover:bg-maroon-800 transition w-1/2 text-center">
               Shop by Category
           </Link>
         </div>
