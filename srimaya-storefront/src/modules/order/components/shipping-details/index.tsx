@@ -14,9 +14,10 @@ const ShippingDetails = ({ order }: ShippingDetailsProps) => {
       <Heading level="h2" className="flex flex-row text-3xl-regular font-cormorant">
         Delivery
       </Heading>
-      <div className="flex items-start gap-x-8">
+      <br />
+      <div className="flex items-start gap-x-8 flex-col">
         <div
-          className="flex flex-col w-1/3"
+          className="flex flex-col"
           data-testid="shipping-address-summary"
         >
           <Text className="text-xl font-cormorant mb-1">
@@ -38,13 +39,13 @@ const ShippingDetails = ({ order }: ShippingDetailsProps) => {
             {order.shipping_address?.country_code?.toUpperCase()}
           </Text>
         </div>
-
+<br />
         <div
-          className="flex flex-col w-1/3 "
+          className="flex flex-col"
           data-testid="shipping-contact-summary"
         >
           <Text className="text-xl font-cormorant mb-1">Contact</Text>
-          <Text className="txt-medium font-cormorant text-lg">
+          <Text className="txt-medium text-lg">
             {order.shipping_address?.phone}
           </Text>
           <Text className="txt-medium font-cormorant text-lg">{order.email}</Text>

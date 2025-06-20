@@ -20,16 +20,16 @@ const LineItemPrice = ({
   const hasReducedPrice = currentPrice < originalPrice
 
   return (
-    <div className="flex flex-col gap-x-2 font-serif text-lg items-end">
+    <div className="flex flex-col gap-x-2 font-serif text-sm items-end">
       <div className="text-left">
         {hasReducedPrice && (
           <>
             <p>
               {style === "default" && (
-                <span className="font-serif text-lg">Original: </span>
+                <span className="font-serif text-sm">Original: </span>
               )}
               <span
-                className="line-through text-ui-fg-muted"
+                className=""
                 data-testid="product-original-price"
               >
                 {convertToLocale({
@@ -39,15 +39,15 @@ const LineItemPrice = ({
               </span>
             </p>
             {style === "default" && (
-              <span className="font-serif text-lg">
+              <span className="font-serif text-sm">
                 -{getPercentageDiff(originalPrice, currentPrice || 0)}%
               </span>
             )}
           </>
         )}
         <span
-          className={clx("font-serif text-lg", {
-            "font-serif text-lg": hasReducedPrice,
+          className={clx("font-serif text-sm", {
+            "font-serif text-sm": hasReducedPrice,
           })}
           data-testid="product-price"
         >

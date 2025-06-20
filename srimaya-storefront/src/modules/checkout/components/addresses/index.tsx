@@ -94,12 +94,12 @@ const Addresses = ({
           <div className="text-small-regular">
             {cart && cart.shipping_address ? (
               <div className="flex items-start gap-x-8">
-                <div className="flex items-start gap-x-1 w-full">
+                <div className="flex flex-col gap-4">
                   <div
-                    className="flex flex-col w-1/3"
+                    className="flex flex-col"
                     data-testid="shipping-address-summary"
                   >
-                    <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                    <Text className="font-cormorant font-semibold text-2xl mb-1">
                       Shipping Address
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
@@ -123,7 +123,7 @@ const Addresses = ({
                     className="flex flex-col w-1/3 "
                     data-testid="shipping-contact-summary"
                   >
-                    <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                    <Text className="font-cormorant font-semibold text-2xl mb-1">
                       Contact
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
@@ -133,7 +133,7 @@ const Addresses = ({
                       {cart.email}
                     </Text>
                   </div>
-
+{/* 
                   <div
                     className="flex flex-col w-1/3"
                     data-testid="billing-address-summary"
@@ -144,7 +144,7 @@ const Addresses = ({
 
                     {sameAsBilling ? (
                       <Text className="txt-medium text-ui-fg-subtle">
-                        Billing- and delivery address are the same.
+                        Billing and delivery address are the same.
                       </Text>
                     ) : (
                       <>
@@ -165,7 +165,7 @@ const Addresses = ({
                         </Text>
                       </>
                     )}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ) : (

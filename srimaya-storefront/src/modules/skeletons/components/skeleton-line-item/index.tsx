@@ -13,7 +13,7 @@ const SkeletonLineItem = () => {
         </div>
       </Table.Cell>
       <Table.Cell>
-        <div className="flex gap-2 items-center font-serif">
+        <div className="flex gap-2 items-center font-serif text-sm">
           <div className="w-6 h-8 bg-gray-200 animate-pulse" />
           <div className="w-14 h-10 bg-gray-200 animate-pulse" />
         </div>

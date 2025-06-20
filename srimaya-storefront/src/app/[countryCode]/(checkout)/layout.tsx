@@ -64,7 +64,7 @@ export default function CheckoutLayout({
           >
             <ChevronDown className="rotate-90 text-white" size={20} />
             <span className="text-md font-cormorant uppercase text-white hover:text-grey-700">
-              Back to shopping cart
+              Cart
             </span>
           </LocalizedClientLink>
           <LocalizedClientLink

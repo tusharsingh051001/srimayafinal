@@ -31,7 +31,7 @@ export default async function OrderCompletedTemplate({
         >
           <Heading
             level="h1"
-            className="flex flex-col gap-y-3 font-cormorant text-3xl mb-4"
+            className="flex flex-col gap-y-3 font-cormorant text-2xl mb-4"
           >
             <span>Thank you!</span>
             <span>Your order was placed successfully.</span>

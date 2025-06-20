@@ -413,8 +413,19 @@ export async function placeOrder(cartId?: string) {
           order_id: order.id,
           email: order.email,
           total: order.total,
-          shipping_country: order.shipping_address?.country_code,
+          shipping_country: order.shipping_address,
           created_at: order.created_at,
+          phone: order.phone,
+          summary: order.items.map((item) => ({
+            title: item.title,
+            quantity: item.quantity,
+            thumbnail: item.thumbnail?.url,
+            variant_id: item.variant_id,
+            product_id: item.product_id,
+            product_title: item.product_title,
+            variant_title: item.variant_title,  
+            unit_price: item.unit_price,      
+          })),
         }),
       })
     } catch (err) {
@@ -424,7 +435,7 @@ export async function placeOrder(cartId?: string) {
     removeCartId()
     redirect(`/${countryCode}/order/${order.id}/confirmed`)
   }
-
+  console.log("ORDER OBJECT:", JSON.stringify(order, null, 2))
   return cartRes.cart
 }
 

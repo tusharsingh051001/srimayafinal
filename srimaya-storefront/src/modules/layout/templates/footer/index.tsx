@@ -26,12 +26,12 @@ export default async function Footer() {
       CONTACT US
     </h2>
     <ul className="space-y-1 list-none">
-      <li className="font-serif text-gray-600 hover:text-gray-800 text-sm md:text-base">
-        <span className="font-semibold">Phone Number</span> <br />
-        +91 9899900486
+      <li className="text-gray-600 hover:text-gray-800 text-sm md:text-base">
+        <span className="font-cormorant text-gray-600 hover:text-gray-800 text-sm md:text-base">PHONE NUMBER</span> <br />
+        <span>+91 9310900486</span>
       </li>
-      <li className="font-cormorant text-gray-600 hover:text-gray-800 text-sm md:text-base">
-        <span className="font-semibold">Email</span> <br />
+      <li className="font-cormorant text-gray-600 hover:text-gray-800 text-lg md:text-base">
+        <span className="font-cormorant text-gray-600 hover:text-gray-800 text-sm md:text-base">EMAIL ID</span> <br />
         contact@srimaya.in
       </li>
     </ul>
