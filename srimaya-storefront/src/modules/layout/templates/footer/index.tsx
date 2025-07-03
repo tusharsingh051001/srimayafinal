@@ -28,7 +28,7 @@ export default async function Footer() {
     <ul className="space-y-1 list-none">
       <li className="text-gray-600 hover:text-gray-800 text-sm md:text-base">
         <span className="font-cormorant text-gray-600 hover:text-gray-800 text-sm md:text-base">PHONE NUMBER</span> <br />
-        <span>+91 9310900486</span>
+        <span className="font-['Times_New_Roman']">+91 9310900486</span>
       </li>
       <li className="font-cormorant text-gray-600 hover:text-gray-800 text-lg md:text-base">
         <span className="font-cormorant text-gray-600 hover:text-gray-800 text-sm md:text-base">EMAIL ID</span> <br />
@@ -81,6 +81,11 @@ export default async function Footer() {
       <li>
         <a href="/about" className="font-cormorant text-gray-600 hover:text-gray-800 text-sm md:text-base">
           ABOUT US
+        </a>
+      </li>
+      <li>
+        <a href="/orderlookup" className="font-cormorant text-gray-600 hover:text-gray-800 text-sm md:text-base">
+          ORDER LOOKUP 
         </a>
       </li>
     </ul>

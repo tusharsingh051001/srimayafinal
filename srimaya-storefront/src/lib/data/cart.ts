@@ -410,7 +410,7 @@ export async function placeOrder(cartId?: string) {
         },
         body: JSON.stringify({
           event: "order_placed",
-          order_id: order.id,
+          order_id: order.display_id,
           email: order.email,
           total: order.total,
           shipping_country: order.shipping_address,

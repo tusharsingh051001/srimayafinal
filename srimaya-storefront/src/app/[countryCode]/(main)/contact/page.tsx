@@ -192,7 +192,7 @@ export default function About() {
                   </p>
                   <p className="mt-2">
                     <span className="mr-2 font-cormorant">Phone Number:</span><br />
-                    <span className="text-xl">+91 9899900486</span>
+                    <span className="font-['Times_New_Roman'] text-xl">+91 9310900486</span>
                   </p>
                 </div>
                 <hr className="my-6 border-gray-500" />

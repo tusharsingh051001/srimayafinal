@@ -80,7 +80,7 @@ const Addresses = ({
                   Billing address
                 </Heading>
 
-                <BillingAddress cart={cart} />
+                {/* <BillingAddress cart={cart} /> */}
               </div>
             )}
             <SubmitButton className="mt-6" data-testid="submit-address-button">
@@ -133,7 +133,7 @@ const Addresses = ({
                       {cart.email}
                     </Text>
                   </div>
-{/* 
+{/* /
                   <div
                     className="flex flex-col w-1/3"
                     data-testid="billing-address-summary"
