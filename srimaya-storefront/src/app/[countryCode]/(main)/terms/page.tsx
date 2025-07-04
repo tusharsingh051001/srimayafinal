@@ -279,7 +279,7 @@ const Terms = () => {
               <br />
               Phone:{" "}
               <a href="tel:9899900486" className="text-blue-500 underline">
-                9899900486
+              <span className="font-['Times_New_Roman'] text-xl">+91 9310900486</span>
               </a>
             </p>
           </li>
