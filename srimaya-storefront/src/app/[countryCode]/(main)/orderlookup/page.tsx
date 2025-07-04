@@ -85,13 +85,13 @@ export default function OrderLookup() {
                         <p><strong>Title:</strong> {item.title}</p>
                         <p><strong>Collection:</strong> {item.product_collection || 'N/A'}</p>
                         <p><strong>Quantity:</strong> {item.quantity || 'N/A'}</p>
-                        {item.thumbnail && (
+                        {/* {item.thumbnail && (
                           <img
                             src={item.thumbnail}
                             alt="Product"
                             className="mt-2 w-32 rounded shadow"
                           />
-                        )}
+                        )} */}
                       </div>
                     ))}
                   </div>
