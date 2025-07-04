@@ -29,6 +29,7 @@ export async function POST(req: Request) {
         o.status,
         o.email,
         a.phone,
+        i.quantity,
         l.title,
         l.thumbnail,
         l.product_collection
