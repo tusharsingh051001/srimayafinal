@@ -53,8 +53,8 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
       <div className="grid grid-cols-2 gap-x-8">
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="text-lg font-cormorant">Material</span>
-            <p className="text-sm">Made in brass with 22k Gold Plating.</p>
+          <span className="text-lg font-cormorant">Material</span>
+            <p>{product.material ? product.material : "-"}</p>
           </div>
           <div>
             <span className="text-lg font-cormorant">Country of origin</span>
